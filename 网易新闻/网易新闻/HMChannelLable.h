@@ -13,6 +13,10 @@
  *  缩放系数
  */
 @property(nonatomic,assign)CGFloat scale;
+/**
+ *  标签点击回调
+ */
+@property(nonatomic,copy)void (^channelLableDidClickBlock)();
 +(instancetype)lableWithTitle:(NSString *)title;
 
 @end

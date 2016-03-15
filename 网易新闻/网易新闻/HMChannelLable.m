@@ -25,6 +25,9 @@
 //    自适应的大小
     [channelLable sizeToFit];
     
+//    设置可交互
+    channelLable.userInteractionEnabled = YES;
+    
     channelLable.textAlignment = NSTextAlignmentCenter;
     
     /**
@@ -48,6 +51,15 @@
     self.transform = CGAffineTransformMakeScale(currentScale, currentScale);
 //    设置颜色
     self.textColor = [UIColor colorWithRed:scale green:0 blue:0 alpha:1.0];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+//    NSLog(@"你点击了我");
+    if(self.channelLableDidClickBlock)
+    {
+        self.channelLableDidClickBlock();
+    }
 }
 
 @end

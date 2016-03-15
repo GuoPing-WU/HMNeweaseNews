@@ -62,6 +62,38 @@
     for (HMChannel *channel in self.channels) {
 //        创建标签
         HMChannelLable *channelLable = [HMChannelLable lableWithTitle:channel.tname];
+        __weak typeof(self) weakVC = self;
+        __weak typeof(channelLable) weakChannelLable = channelLable;
+        channelLable.channelLableDidClickBlock = ^
+        {
+//            获得当前选中的标签的索引
+            HMChannelLable *currentLable = weakVC.channelView.subviews[weakVC.currentIndex];
+            currentLable.scale = 0;
+//            重置currentIndex
+            weakVC.currentIndex = [weakVC.channelView.subviews indexOfObject:weakChannelLable];
+            
+//            滚动到cell指定的位置
+            [weakVC.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:weakVC.currentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+            
+//            获得标签中心点的值
+            CGFloat centerX = weakChannelLable.center.x;
+//            获得屏幕宽度的一半
+            CGFloat halfScreen = [UIScreen mainScreen].bounds.size.width*0.5;
+//            获得scrollView的最大滚动范围
+            CGFloat maxOffset = weakVC.channelView.contentSize.width-[UIScreen mainScreen].bounds.size.width;
+//            获得偏移值
+            CGFloat offset = centerX-halfScreen;
+            if(offset<0)
+            {
+                offset = 0;
+            }
+            else if (offset > maxOffset)
+            {
+                offset = maxOffset;
+            }
+            [weakVC.channelView setContentOffset:CGPointMake(offset, 0) animated:YES];
+        };
+        
 //        设置frame
         channelLable.frame = CGRectMake(lableX, 0, channelLable.frame.size.width, channelH);
 //        将频道标签添加到channelView上
