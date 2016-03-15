@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HMNewsTableViewController.h
 //  网易新闻
 //
 //  Created by WGP on 16/3/13.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface HMNewsTableViewController : UITableViewController
 
+@property(nonatomic,copy)NSString *URLStr;
 
 @end
-

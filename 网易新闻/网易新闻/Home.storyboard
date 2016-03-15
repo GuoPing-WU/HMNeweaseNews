@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="N1o-3O-wDh">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--网易新闻-->
+        <scene sceneID="D5k-4d-wOu">
+            <objects>
+                <viewController id="dsU-dM-gxT" customClass="HMHomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Td9-hF-70w"/>
+                        <viewControllerLayoutGuide type="bottom" id="9zC-7f-2Mg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UR3-nR-iOF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ml1-ud-VLD">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="P7Q-L5-wac"/>
+                                </constraints>
+                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MX8-Wp-NOz">
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tbh-Yf-uOS">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="channelCell" id="BlB-w4-IfM" customClass="HMChannelCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="dsU-dM-gxT" id="Ccf-pG-3zr"/>
+                                    <outlet property="delegate" destination="dsU-dM-gxT" id="npt-gD-qwP"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ml1-ud-VLD" firstAttribute="top" secondItem="Td9-hF-70w" secondAttribute="bottom" id="56D-z1-hO6"/>
+                            <constraint firstItem="9zC-7f-2Mg" firstAttribute="top" secondItem="MX8-Wp-NOz" secondAttribute="bottom" id="5cW-Xb-Rv6"/>
+                            <constraint firstItem="MX8-Wp-NOz" firstAttribute="top" secondItem="ml1-ud-VLD" secondAttribute="bottom" id="9A9-Jd-tZk"/>
+                            <constraint firstItem="MX8-Wp-NOz" firstAttribute="leading" secondItem="UR3-nR-iOF" secondAttribute="leading" id="EY9-sd-zMA"/>
+                            <constraint firstAttribute="trailing" secondItem="ml1-ud-VLD" secondAttribute="trailing" id="Ytn-XN-kle"/>
+                            <constraint firstItem="ml1-ud-VLD" firstAttribute="leading" secondItem="UR3-nR-iOF" secondAttribute="leading" id="feI-hE-9ew"/>
+                            <constraint firstAttribute="trailing" secondItem="MX8-Wp-NOz" secondAttribute="trailing" id="pUe-In-6Mr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="网易新闻" id="wrk-xI-DUY"/>
+                    <connections>
+                        <outlet property="channelView" destination="ml1-ud-VLD" id="3GM-dd-fzf"/>
+                        <outlet property="collectionView" destination="MX8-Wp-NOz" id="REd-mI-cDY"/>
+                        <outlet property="flowLayout" destination="tbh-Yf-uOS" id="5D5-Kr-m8C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CXe-mi-EoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714" y="369"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x2y-Bh-b2l">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N1o-3O-wDh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="21l-hn-wvu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dsU-dM-gxT" kind="relationship" relationship="rootViewController" id="x03-d6-CH8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRN-vg-TXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="182" y="369"/>
+        </scene>
+    </scenes>
+</document>
