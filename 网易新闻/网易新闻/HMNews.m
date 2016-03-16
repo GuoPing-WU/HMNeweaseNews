@@ -18,6 +18,12 @@
     return obj;
 }
 
+
+- (void)setDocid:(NSString *)docid {
+    _docid = [docid copy];
+    _detailURLString = [NSString stringWithFormat:@"article/%@/full.html",docid];
+}
+
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key
 {}
 

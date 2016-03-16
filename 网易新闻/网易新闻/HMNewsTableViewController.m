@@ -7,6 +7,7 @@
 //
 
 #import "HMNewsTableViewController.h"
+#import "HMNewsDetailViewController.h"
 #import "HMNews.h"
 #import "HMNewsCell.h"
 
@@ -59,6 +60,16 @@
     HMNews *news = self.news[indexPath.row];
     
     return [HMNewsCell cellHeight:news];
+}
+
+#pragma  mark - UITableView的代理方法
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HMNewsDetailViewController *detailVC = [[HMNewsDetailViewController alloc] init];
+    // 获得新闻模型
+    HMNews *news = self.news[indexPath.row];
+    detailVC.URLString = news.detailURLString;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 -(BOOL)prefersStatusBarHidden

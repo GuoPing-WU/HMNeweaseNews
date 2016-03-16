@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3C24226AFB1E98C5B9BD0AB6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F084C266234E2DF0057EAE2A /* libPods.a */; };
+		EA2013231C97F2070052002E /* HMNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2013211C97F2070052002E /* HMNewsDetailViewController.m */; };
+		EA2013241C97F2070052002E /* HMNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2013221C97F2070052002E /* HMNewsDetailViewController.xib */; };
+		EA2013261C97F6750052002E /* detail.html in Resources */ = {isa = PBXBuildFile; fileRef = EA2013251C97F6750052002E /* detail.html */; };
 		EAA090061C96713F0068B4C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA090051C96713F0068B4C7 /* main.m */; };
 		EAA090091C96713F0068B4C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA090081C96713F0068B4C7 /* AppDelegate.m */; };
 		EAA090111C96713F0068B4C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAA090101C96713F0068B4C7 /* Assets.xcassets */; };
@@ -53,6 +56,10 @@
 /* Begin PBXFileReference section */
 		9BCDF5C1EB571EAD5AE630A7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C1DEB322896D58A7D4F048CD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EA2013201C97F2070052002E /* HMNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsDetailViewController.h; sourceTree = "<group>"; };
+		EA2013211C97F2070052002E /* HMNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsDetailViewController.m; sourceTree = "<group>"; };
+		EA2013221C97F2070052002E /* HMNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMNewsDetailViewController.xib; sourceTree = "<group>"; };
+		EA2013251C97F6750052002E /* detail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = detail.html; sourceTree = "<group>"; };
 		EAA090011C96713F0068B4C7 /* 网易新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网易新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA090051C96713F0068B4C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAA090071C96713F0068B4C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -182,6 +189,7 @@
 		EAA090041C96713F0068B4C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA2013251C97F6750052002E /* detail.html */,
 				EAA090151C96713F0068B4C7 /* Info.plist */,
 				EAA090101C96713F0068B4C7 /* Assets.xcassets */,
 				EAA0D3B01C9676F900239184 /* topic_news.json */,
@@ -248,6 +256,9 @@
 				EAA0D3C11C96850A00239184 /* News.storyboard */,
 				EAA0D3C31C96856800239184 /* HMNewsTableViewController.h */,
 				EAA0D3C41C96856800239184 /* HMNewsTableViewController.m */,
+				EA2013201C97F2070052002E /* HMNewsDetailViewController.h */,
+				EA2013211C97F2070052002E /* HMNewsDetailViewController.m */,
+				EA2013221C97F2070052002E /* HMNewsDetailViewController.xib */,
 				EAA0D3CA1C96923E00239184 /* HMNews.h */,
 				EAA0D3CB1C96923E00239184 /* HMNews.m */,
 				EAA0D3CD1C9697D400239184 /* HMNewsCell.h */,
@@ -401,10 +412,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAA090141C96713F0068B4C7 /* LaunchScreen.storyboard in Resources */,
+				EA2013241C97F2070052002E /* HMNewsDetailViewController.xib in Resources */,
 				EAA090111C96713F0068B4C7 /* Assets.xcassets in Resources */,
 				EAA0D3C21C96850A00239184 /* News.storyboard in Resources */,
 				EAA0D3B11C9676F900239184 /* topic_news.json in Resources */,
 				EAA0D3B91C96779E00239184 /* Home.storyboard in Resources */,
+				EA2013261C97F6750052002E /* detail.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +492,7 @@
 			files = (
 				EAA0D3CF1C9697D400239184 /* HMNewsCell.m in Sources */,
 				EAA0D3BC1C967B6100239184 /* HMChannel.m in Sources */,
+				EA2013231C97F2070052002E /* HMNewsDetailViewController.m in Sources */,
 				EAA0D3C91C9685CF00239184 /* HMNetworkTool.m in Sources */,
 				EAA0D3C51C96856800239184 /* HMNewsTableViewController.m in Sources */,
 				EAA0D3B61C96777F00239184 /* HMHomeViewController.m in Sources */,

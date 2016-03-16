@@ -190,6 +190,8 @@
     HMNewsTableViewController *newsVC = [self newsVCWith:channel];
 //    传递控制器
     cell.newsVC = newsVC;
+//    如果一个控制器的View作为另一个控制器的子控件那么这个控制器也应该作为另一个控制器的子控制器
+    [self addChildViewController:newsVC];
     return cell;
 }
 

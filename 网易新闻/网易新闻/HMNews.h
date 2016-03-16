@@ -35,6 +35,16 @@
  */
 @property(nonatomic,assign) BOOL imgType;
 
+/**
+ *  新闻详情页的id
+ */
+@property (nonatomic, copy) NSString *docid;
+/**
+ *  详情页URL
+ */
+@property (nonatomic, copy) NSString *detailURLString;
+
+
 +(void)loadNewsWithURL:(NSString *)URLStr Success:(void (^)(NSArray *news))success faild:(void (^)(NSError *error))failed;
 
 @end
