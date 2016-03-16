@@ -163,14 +163,14 @@
     currentLable.scale = currentScale;
     nextLable.scale = nextScale;
     
-    
+     self.currentIndex = self.collectionView.contentOffset.x/self.collectionView.bounds.size.width;
 }
 
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    
-    self.currentIndex = self.collectionView.contentOffset.x/self.collectionView.bounds.size.width;
-}
+//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+//{
+//    
+//    self.currentIndex = self.collectionView.contentOffset.x/self.collectionView.bounds.size.width;
+//}
 
 #pragma mark  - collectioView数据源方法
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
